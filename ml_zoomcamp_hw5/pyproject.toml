@@ -1,0 +1,21 @@
+[project]
+name = "ml-zoomcamp-hw5"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "sanvi-g07", email = "146673251+sanvi-g07@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "scikit-learn==1.6.1",
+    "uvicorn>=0.52.1",
+]
+
+[project.scripts]
+ml-zoomcamp-hw5 = "ml_zoomcamp_hw5:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
