@@ -1,7 +1,7 @@
 import requests
 
-#url = 'http://localhost:8080/predict'
-url = "https://lively-beacon-1052.fly.dev/predict"
+url = 'http://localhost:8080/predict'
+#url = "https://lively-beacon-1052.fly.dev/predict"
 
 customer = {
     "gender": "male",
