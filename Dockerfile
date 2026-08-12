@@ -1,0 +1,18 @@
+FROM python:3.12.1-slim-bookworm
+
+#RUN pip install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR  /app
+ENV PATH="/app/.venv/bin:$PATH"
+
+COPY ".python-version" "pyproject.toml" "uv.lock" ./
+# without no-install-project, tries to install ml-zoomcamp project, but that isn't installed
+RUN uv sync --locked --no-install-project 
+
+COPY "predict.py" "model.bin" ./
+
+EXPOSE 8080
+
+ENTRYPOINT ["uvicorn", "predict:app", "--host", "0.0.0.0", "--port", "8080"]
+
