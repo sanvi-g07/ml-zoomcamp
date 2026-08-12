@@ -2,10 +2,11 @@ import pickle
 import uvicorn
 from fastapi import FastAPI
 from typing import Literal
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 # request
 class Customer(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     gender: Literal["male", "female"]
     seniorcitizen: Literal[0, 1]
     partner: Literal["yes", "no"]
