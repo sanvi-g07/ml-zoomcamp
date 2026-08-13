@@ -1,5 +1,5 @@
 [project]
-name = "ml-zoomcamp"
+name = "churn-app-deploy"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-ml-zoomcamp = "ml_zoomcamp:main"
+churn-app-deploy = "churn_app_deploy:main"
 
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]
